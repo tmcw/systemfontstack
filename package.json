@@ -1,0 +1,21 @@
+{
+  "name": "systemfontstack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tmcw/systemfontstack.git",
+  "author": "Tom MacWright <tom@macwright.org>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.10.2"
+  }
+}
