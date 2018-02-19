@@ -19,6 +19,9 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1"
           />
+          <style>{`@media screen and (min-width: 30em) {
+  .dg-ns { display: -ms-grid; display: grid; }
+}`}</style>
         </Head>
         <body className="sans-serif bg-white black">
           {this.props.customValue}

@@ -136,23 +136,105 @@ export default class extends React.Component {
         </div>
 
         <div className="bg-black">
-          <div className="mw7 ph4 center white">
-            <h1 className="fw9 f1 ttu ma0 pv5">The system font stack</h1>
+          <div className="mw7 ph4 center white pv4">
+            <h1 className="fw9 f1 ttu ma0 ">System font stack</h1>
+            <p className="measure-wide lh-copy mt3 o-80">
+              Webfonts were great when most computers only had a handful of good
+              fonts pre-installed. Thanks to font creation and buying by Apple,
+              Microsoft, Google, and other folks, most computers have good — no,
+              great — fonts installed, and they're a great option if you want to{" "}
+              <em>not</em> load a separate font.
+            </p>
           </div>
         </div>
         <div className="mw7 ph4 center black-90">
-          <p className="measure-wide lh-copy mt5">
-            Webfonts were great when most computers only had a handful of good
-            fonts pre-installed. Thanks to font creation and buying by Apple,
-            Microsoft, Google, and other folks, most computers have good — no,
-            great — fonts installed, and they're a great option if you want to{" "}
-            <em>not</em> load a separate font.
-          </p>
+          <div
+            className="dg-ns mt4"
+            style={{
+              gridTemplateColumns: "1fr 1fr 1fr",
+              gridGap: "20px 20px"
+            }}
+          >
+            <div>
+              <div className="fw7 mb2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w1 h1 dib v-top mr2"
+                >
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+                Fast
+              </div>
+              <p className="lh-copy ma0">
+                No network request, no time to parse a font, no flash of an
+                incorrect font.
+              </p>
+            </div>
+            <div className="mt0-ns mt3">
+              <div className="fw7 mb2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w1 h1 dib v-top mr2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                Styles & unicode
+              </div>
+              <p className="lh-copy ma0">
+                System fonts have lots of styles and broad language coverage,
+                unlike many webfonts.
+              </p>
+            </div>
+            <div className="mt0-ns mt3">
+              <div className="fw7 mb2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w1 h1 dib v-top mr2"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+                Familiarity
+              </div>
+              <p className="lh-copy ma0">
+                Web apps feel more native when they use system font faces.
+              </p>
+            </div>
+          </div>
           <div className="mt5">
+            <h1 className="fw5 f3 mb4 mt2">Basic system font stacks</h1>
             <div className="bg-yellow pv1 ph2 ttu dib br2 f7">
               Click to select & copy
             </div>
-            <h1 className="fw5 f4">Sans-serif</h1>
+            <h1 className="fw5 f4 mt3 mb2">Sans-serif</h1>
             <ClickToSelect>
               <div className="code overflow-none lh-copy">
                 font-family:{" "}
@@ -162,7 +244,7 @@ export default class extends React.Component {
                 )};
               </div>
             </ClickToSelect>
-            <h1 className="fw5 f4">Serif</h1>
+            <h1 className="fw5 f4 mt3 mb2">Serif</h1>
             <ClickToSelect>
               <div className="code overflow-none lh-copy">
                 font-family:{" "}
@@ -172,7 +254,7 @@ export default class extends React.Component {
                 )};
               </div>
             </ClickToSelect>
-            <h1 className="fw5 f4">Mono</h1>
+            <h1 className="fw5 f4 mt3 mb2">Mono</h1>
             <ClickToSelect>
               <div className="code overflow-none lh-copy">
                 font-family:{" "}
