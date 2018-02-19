@@ -68,6 +68,7 @@ class ClickToSelect extends React.PureComponent {
     range.selectNodeContents(this._target);
     sel.removeAllRanges();
     sel.addRange(range);
+    document.execCommand("copy");
   };
 
   getRef = target => {
