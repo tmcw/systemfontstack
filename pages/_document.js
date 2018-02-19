@@ -13,10 +13,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <link
-            href="https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css"
-            rel="stylesheet"
-          />
+          <link href="/static/tachyons.min.css" rel="stylesheet" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1"
