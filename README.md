@@ -1,5 +1,7 @@
 ## systemfontstack
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tmcw/systemfontstack.svg)](https://greenkeeper.io/)
+
 _Turning back the clock on webfonts since 2018_
 
 Webfonts were great when most computers only had a handful of good fonts
