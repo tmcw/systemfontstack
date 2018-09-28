@@ -30,6 +30,20 @@ This builds on the [amazing, excellent blog post](https://bitsofco.de/the-new-sy
 by [Ire Aderinokun](https://ireaderinokun.com/), as well as plenty of other sources.
 I'll _heavily_ cite my sources because citations are important. Let's start off.
 
+### Notes
+
+Inspired by bootstrap, I consider increasing the specific names in our mono font stack. https://github.com/twbs/bootstrap/issues/26228
+
+But this is a bit confusing:
+
+```
+code, kbd, pre, samp {
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+```
+
+- Why specify `Menlo,Monaco`? As far as I can tell, the only computers that don’t have Menlo, but do have Monaco are those running macOS from 10 to 10.5, - so Leopard and Tiger. That can't be a sizeable chunk.
+
 ### Cite
 
 * http://markdotto.com/2018/02/07/github-system-fonts/
