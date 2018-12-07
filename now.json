@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "systemfontstack",
+  "alias": "systemfontstack.com",
+  "builds": [
+    {"src":"next.config.js", "use": "@now/next"}
+  ]
+}
