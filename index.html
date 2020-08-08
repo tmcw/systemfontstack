@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" class="next-head">
+  <title class="next-head">systemfontstack</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href="/tachyons.min.css" rel="stylesheet">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1, maximum-scale=1">
+  <style>
+  @media screen and (min-width: 30em) {
+  .dg-ns { display: -ms-grid; display: grid; }
+  }
+  </style>
+</head>
+<body class="sans-serif bg-white black">
+    <div data-reactroot="">
+      <div class="pa1 bg-dark-gray">
+        <div class="mw7 ph4 pv1 center">
+          <a class="white hover-blue link f6" href=
+          "https://github.com/tmcw/systemfontstack"><svg xmlns=
+          "http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill=
+          "none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" class=
+          "w1 h1 v-mid mr2">
+          <path d=
+          "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+          </path></svg>Fork & contribute on GitHub</a>
+        </div>
+      </div>
+      <div class="bg-black">
+        <div class="mw7 ph4 center white pv4">
+          <h1 class="fw9 f1 ttu ma0">System font stack</h1>
+          <p class="measure-wide lh-copy mt3 o-80">Webfonts were
+          great when most computers only had a handful of good
+          fonts pre-installed. Thanks to font creation and buying
+          by Apple, Microsoft, Google, and other folks, most
+          computers have good — no, great — fonts installed, and
+          they're a great option if you want to
+          <em>not</em> load a separate font.</p>
+        </div>
+      </div>
+      <div class="mw7 ph4 center black-90">
+        <div class="dg-ns mt4" style=
+        "grid-template-columns:1fr 1fr 1fr;grid-gap:20px 20px">
+          <div>
+            <div class="fw7 mb2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewbox="0 0 24 24" fill="none" stroke=
+              "currentColor" stroke-width="2" stroke-linecap=
+              "round" stroke-linejoin="round" class=
+              "w1 h1 dib v-top mr2">
+              <polygon points=
+              "13 2 3 14 12 14 11 22 21 10 12 10 13 2">
+              </polygon></svg>Fast
+            </div>
+            <p class="lh-copy ma0">No network request, no time to
+            parse a font, no flash of an incorrect font.</p>
+          </div>
+          <div class="mt0-ns mt3">
+            <div class="fw7 mb2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewbox="0 0 24 24" fill="none" stroke=
+              "currentColor" stroke-width="2" stroke-linecap=
+              "round" stroke-linejoin="round" class=
+              "w1 h1 dib v-top mr2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2">
+              </path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75">
+              </path></svg>Styles & unicode
+            </div>
+            <p class="lh-copy ma0">System fonts have lots of styles
+            and broad language coverage, unlike many webfonts.</p>
+          </div>
+          <div class="mt0-ns mt3">
+            <div class="fw7 mb2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewbox="0 0 24 24" fill="none" stroke=
+              "currentColor" stroke-width="2" stroke-linecap=
+              "round" stroke-linejoin="round" class=
+              "w1 h1 dib v-top mr2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry=
+              "2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21">
+              </line></svg>Familiarity
+            </div>
+            <p class="lh-copy ma0">Web apps feel more native when
+            they use system font faces.</p>
+          </div>
+        </div>
+        <div class="mt5">
+          <h1 class="fw5 f3 mb4 mt2">Basic system font stacks</h1>
+          <h1 class="fw5 f4 mt3 mb2">Sans-serif</h1>
+          <div>
+            <div class="code overflow-none lh-copy">
+              font-family:<!-- --> <!-- -->-apple-system, 
+              <!-- -->BlinkMacSystemFont, <!-- -->avenir next, 
+              <!-- -->avenir, <!-- -->helvetica neue, 
+              <!-- -->helvetica, <!-- -->Ubuntu, <!-- -->roboto, 
+              <!-- -->noto, <!-- -->segoe ui, <!-- -->arial, 
+              <!-- -->sans-serif<!-- -->;
+            </div>
+          </div>
+          <h1 class="fw5 f4 mt3 mb2">Serif</h1>
+          <div>
+            <div class="code overflow-none lh-copy">
+              font-family:<!-- --> <!-- -->Iowan Old Style, 
+              <!-- -->Apple Garamond, <!-- -->Baskerville, 
+              <!-- -->Times New Roman, <!-- -->Droid Serif, 
+              <!-- -->Times, <!-- -->Source Serif Pro, 
+              <!-- -->serif, <!-- -->Apple Color Emoji, 
+              <!-- -->Segoe UI Emoji, <!-- -->Segoe UI Symbol
+              <!-- -->;
+            </div>
+          </div>
+          <h1 class="fw5 f4 mt3 mb2">Mono</h1>
+          <div>
+            <div class="code overflow-none lh-copy">
+              font-family:<!-- --> <!-- -->Menlo, <!-- -->Consolas,
+              <!-- -->Monaco, <!-- -->Liberation Mono, 
+              <!-- -->Lucida Console, <!-- -->monospace<!-- -->;
+            </div>
+          </div>
+        </div>
+        <hr class="bt b--black-20 mw5 center mt5">
+        <h3 class="fw5 f4">FAQ</h3>
+        <div>
+          <h3 class="mb0 mt2">What's
+          <code>-apple-system</code>?</h3>
+          <p class="measure-wide lh-copy mt2">-apple-system and
+          BlinkMacSystemFont are aliases for the default fonts on
+          new macOS and iOS computers. In recent version, they
+          alias to the new<!-- --> <a class="link blue hover-black"
+          href="https://developer.apple.com/fonts/">San Francisco
+          font</a>.</p>
+        </div>
+      </div>
+      <div class="bg-near-white pv5 mt5">
+        <div class="mw7 ph4 center">
+          <div>
+            <h1 class="fw5 f4">References</h1>
+            <ul>
+              <li class="pa1">
+                <a class="link blue hover-black" href=
+                "https://bitsofco.de/the-new-system-font-stack/">The
+                New System Font Stack</a>
+              </li>
+              <li class="pa1">
+                <a class="link blue hover-black" href=
+                "http://markdotto.com/2018/02/07/github-system-fonts/">
+                GitHub System Fonts</a>
+              </li>
+              <li class="pa1">
+                <a class="link blue hover-black" href=
+                "https://www.client9.com/css-system-font-stack---monospace-v1/">
+                CSS System Font Stack - Monospace V1</a>
+              </li>
+              <li class="pa1">
+                <a class="link blue hover-black" href=
+                "http://z12t.com/system-shock-mono/">System Shock
+                Mono</a>
+              </li>
+              <li class="pa1">
+                <a class="link blue hover-black" href=
+                "https://booking.design/implementing-system-fonts-on-booking-com-a-lesson-learned-bdc984df627f">
+                Implementing system fonts on Booking.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
