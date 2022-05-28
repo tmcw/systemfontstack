@@ -64,7 +64,7 @@ First of all, there are really three or more system font stacks:
 - Serif
 
 You could also say 'slab serif' needs a stack, but there's not much precedent
-for one, even though there are plenty of slab serif syste fonts.
+for one, even though there are plenty of slab serif system fonts.
 
 **Google -> copy + paste**
 
