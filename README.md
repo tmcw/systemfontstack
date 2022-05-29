@@ -81,7 +81,3 @@ does it look bizarre on Windows or Linux or Android? We should make that obvious
 
 Don't start a shorthand `font` declaration with `-apple-system`, and other bummer
 lessons.
-
-### See also
-
-- http://fontfamily.io/
