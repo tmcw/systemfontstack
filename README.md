@@ -4,7 +4,7 @@ _Turning back the clock on webfonts since 2018_
 
 Webfonts were great when most computers only had a handful of good fonts
 pre-installed. Thanks to font creation and buying by Apple, Microsoft, Google,
-and other folks, most computers have good - no, great - fonts installed, and
+and other folks, most computers have good—no, great—fonts installed, and
 they're a great option if you want to _not_ load a separate font.
 
 Some of the disadvantages of webfonts are:
