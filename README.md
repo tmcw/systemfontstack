@@ -46,11 +46,11 @@ code, kbd, pre, samp {
 
 ### Cite
 
-* http://markdotto.com/2018/02/07/github-system-fonts/
+* https://markdotto.com/blog/github-system-fonts/
 * http://tachyons.io/
 * https://thedisconnect.co/one/
-* https://www.client9.com/css-system-font-stack---monospace-v1/
-* http://z12t.com/system-shock-mono/
+* [https://www.client9.com/css-system-font-stack---monospace-v1/](https://web.archive.org/web/20211019200000/https://www.client9.com/css-system-font-stack-monospace-v1/)
+* [http://z12t.com/system-shock-mono/](https://web.archive.org/web/20161028011751/http://z12t.com/system-shock-mono/)
 * https://booking.design/implementing-system-fonts-on-booking-com-a-lesson-learned-bdc984df627f
 
 ## Why a website for system fonts
