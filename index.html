@@ -239,38 +239,38 @@
       </div>
   </div>
 <script>
-document.querySelectorAll('button[data-copy]').forEach((button) => {
-  button.addEventListener('click', () => {
-    const codeId = button.getAttribute('data-copy');
-    const codeDiv = document.getElementById(codeId);
-    if (codeDiv && codeDiv.textContent && codeDiv.textContent.length > 0) {
-
-      // Create a temporary textarea to copy the text
-      const tempTextarea = document.createElement('textarea');
-      tempTextarea.value = codeDiv.textContent.trim();
-      document.body.appendChild(tempTextarea);
-      tempTextarea.select();
-      const copied = document.execCommand('copy');
-      document.body.removeChild(tempTextarea);
-
-      // If text copied successfully › provide feedback to user
-      if (copied) {
-        button.classList.add('green','bg-washed-green','hover-bg-washed-green');
-        const buttonIcon = button.querySelector('use');
-        buttonIcon.setAttribute('href', '#success-icon');
-        const buttonText = button.querySelector('span');
-        buttonText.textContent = 'Copied!';
-        setTimeout(() => {
-          button.classList.remove('green','bg-washed-green','hover-bg-washed-green');
-          buttonIcon.setAttribute('href','#copy-icon');
-          buttonText.textContent = 'Copy';
-        }, 2000);
-      } else {
-        console.error('Failed to copy text');
-      }
+(() => {
+  async function copyText(textToCopy) {
+    try {
+      await navigator.clipboard.writeText(textToCopy);
+    } catch (err) {
+      console.error('Failed to copy css:', err);
     }
+  }
+  document.querySelectorAll('button[data-copy]').forEach((button) => {
+    button.addEventListener('click',() => {
+      const codeId = button.getAttribute('data-copy');
+      if (!codeId) return;
+      const codeDiv = document.getElementById(codeId);
+      if (codeDiv && codeDiv.textContent) {
+        copyText(codeDiv.textContent.trim())
+          .then(() => {
+            button.classList.add('green','bg-washed-green','hover-bg-washed-green');
+            const buttonIcon = button.querySelector('use');
+            buttonIcon?.setAttribute('href', '#success-icon');
+            const buttonText = button.querySelector('span');
+            if (buttonText) buttonText.textContent = 'Copied!';
+            setTimeout(() => {
+              button.classList.remove('green','bg-washed-green','hover-bg-washed-green');
+              buttonIcon?.setAttribute('href', '#copy-icon');
+              if (buttonText) buttonText.textContent = 'Copy';
+            }, 2000);
+          })
+          .catch((err) => { console.error('Failed to copy css:', err); });
+      }
+    });
   });
-});
+})();
 </script>
 </body>
 </html>
