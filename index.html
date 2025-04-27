@@ -132,25 +132,67 @@
             they use system font faces.</p>
           </div>
         </div>
+    
+        <!-- SVG Icons for Copy Buttons -->
+        <svg style="display:none;">
+          <defs>
+            <symbol id="copy-icon" viewBox="0 0 20 20">
+            <path fill="none" stroke="currentColor" 
+            stroke-linecap="round" stroke-linejoin="round" 
+            d="M15.5 13.5v5h-11v-15h3m0 1v-2h1.1a1.5 1.5 0 012.8 0h1.1v2h-5Zm11 6h-9l3-3-3 3 3 3m0-10h3v4"/>
+          </symbol>
+            <symbol id="success-icon" viewBox="0 0 20 20">
+            <path fill="none" stroke="currentColor" 
+            stroke-linecap="round" stroke-linejoin="round" 
+            stroke-width="1.5" d="m3.5 10.5 4 4 9-9" />
+          </symbol>
+          </defs>
+        </svg>
+      
         <div class="mt5">
           <h1 class="fw5 f3 mb4 mt2">Basic system font stacks</h1>
           <h1 class="fw5 f4 mt3 mb2">Sans-serif</h1>
-          <div>
-            <div class="code overflow-none lh-copy">
+          <div class="flex ba-ns b--moon-gray br3 overflow-hidden-ns">
+            <div id="sans-serif" class="code overflow-none lh-copy flex-auto pa3-ns">
               font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
             </div>
+            <button data-copy="sans-serif" 
+            aria-label="Copy Sans-serif font stack to clipboard." 
+            style="flex:0 0 4rem;border:unset;border-left:1px solid #ccc;" 
+            class="bl b--silver mid-gray f6-ns pointer bg-light-gray hover-bg-black-10 bg-animate">
+              <svg style="width:1.5rem;height:1.5rem;">
+                <use href="#copy-icon" />
+              </svg>
+              <span>Copy</span>
+            </button>
           </div>
-          <h1 class="fw5 f4 mt3 mb2">Serif</h1>
-          <div>
-            <div class="code overflow-none lh-copy">
+          <h1 class="fw5 f4 mt4 mb2">Serif</h1>
+          <div class="flex ba-ns b--moon-gray br3 overflow-hidden-ns">
+            <div id="serif" class="code overflow-none lh-copy flex-auto pa3-ns">
               font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
             </div>
+            <button data-copy="serif" aria-label="Copy Serif font stack to clipboard." 
+            style="flex:0 0 4rem;border:unset;border-left:1px solid #ccc;" 
+            class="bl b--silver mid-gray f6-ns pointer bg-light-gray hover-bg-black-10 bg-animate">
+              <svg style="width:1.5rem;height:1.5rem;">
+                <use href="#copy-icon" />
+              </svg>
+              <span>Copy</span>
+            </button>
           </div>
-          <h1 class="fw5 f4 mt3 mb2">Mono</h1>
-          <div>
-            <div class="code overflow-none lh-copy">
+          <h1 class="fw5 f4 mt4 mb2">Mono</h1>
+          <div class="flex ba-ns b--moon-gray br3 overflow-hidden-ns">
+            <div id="mono" class="code overflow-none lh-copy flex-auto pa3-ns">
               font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
             </div>
+            <button data-copy="mono" aria-label="Copy monospace font stack to clipboard." 
+            style="flex:0 0 4rem;border:unset;border-left:1px solid #ccc;" 
+            class="bl b--silver mid-gray f6-ns pointer bg-light-gray hover-bg-black-10 bg-animate">
+              <svg style="width:1.5rem;height:1.5rem;">
+                <use href="#copy-icon" />
+              </svg>
+              <span>Copy</span>
+            </button>
           </div>
         </div>
         <hr class="bt b--black-20 mw5 center mt5">
@@ -196,5 +238,39 @@
         </div>
       </div>
   </div>
+<script>
+(() => {
+  async function copyText(textToCopy) {
+    try {
+      await navigator.clipboard.writeText(textToCopy);
+    } catch (err) {
+      console.error('Failed to copy css:', err);
+    }
+  }
+  document.querySelectorAll('button[data-copy]').forEach((button) => {
+    button.addEventListener('click',() => {
+      const codeId = button.getAttribute('data-copy');
+      if (!codeId) return;
+      const codeDiv = document.getElementById(codeId);
+      if (codeDiv && codeDiv.textContent) {
+        copyText(codeDiv.textContent.trim())
+          .then(() => {
+            button.classList.add('green','bg-washed-green','hover-bg-washed-green');
+            const buttonIcon = button.querySelector('use');
+            buttonIcon?.setAttribute('href', '#success-icon');
+            const buttonText = button.querySelector('span');
+            if (buttonText) buttonText.textContent = 'Copied!';
+            setTimeout(() => {
+              button.classList.remove('green','bg-washed-green','hover-bg-washed-green');
+              buttonIcon?.setAttribute('href', '#copy-icon');
+              if (buttonText) buttonText.textContent = 'Copy';
+            }, 2000);
+          })
+          .catch((err) => { console.error('Failed to copy css:', err); });
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
