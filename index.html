@@ -240,6 +240,8 @@
   </div>
 <script>
 (() => {
+  const successClasses = ['green', 'hover-green', 'bg-washed-green', 'hover-bg-washed-green'];
+
   async function copyText(textToCopy) {
     try {
       await navigator.clipboard.writeText(textToCopy);
@@ -255,13 +257,13 @@
       if (codeDiv && codeDiv.textContent) {
         copyText(codeDiv.textContent.trim())
           .then(() => {
-            button.classList.add('green','bg-washed-green','hover-bg-washed-green');
+            button.classList.add(...successClasses);
             const buttonIcon = button.querySelector('use');
             buttonIcon?.setAttribute('href', '#success-icon');
             const buttonText = button.querySelector('span');
             if (buttonText) buttonText.textContent = 'Copied!';
             setTimeout(() => {
-              button.classList.remove('green','bg-washed-green','hover-bg-washed-green');
+              button.classList.remove(...successClasses);
               buttonIcon?.setAttribute('href', '#copy-icon');
               if (buttonText) buttonText.textContent = 'Copy';
             }, 2000);
