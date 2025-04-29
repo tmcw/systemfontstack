@@ -152,8 +152,8 @@
         <div class="mt5">
           <h1 class="fw5 f3 mb4 mt2">Basic system font stacks</h1>
           <h1 class="fw5 f4 mt3 mb2">Sans-serif</h1>
-          <div class="flex ba-ns b--moon-gray br3 overflow-hidden-ns">
-            <div id="sans-serif" class="code overflow-none lh-copy flex-auto pa3-ns">
+          <div class="flex ba b--moon-gray br3 overflow-hidden">
+            <div id="sans-serif" class="code overflow-none lh-copy flex-auto pa3-ns pa2">
               font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
             </div>
             <button data-copy="sans-serif" 
@@ -167,8 +167,8 @@
             </button>
           </div>
           <h1 class="fw5 f4 mt4 mb2">Serif</h1>
-          <div class="flex ba-ns b--moon-gray br3 overflow-hidden-ns">
-            <div id="serif" class="code overflow-none lh-copy flex-auto pa3-ns">
+          <div class="flex ba b--moon-gray br3 overflow-hidden">
+            <div id="serif" class="code overflow-none lh-copy flex-auto pa3-ns pa2">
               font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
             </div>
             <button data-copy="serif" aria-label="Copy Serif font stack to clipboard." 
@@ -181,8 +181,8 @@
             </button>
           </div>
           <h1 class="fw5 f4 mt4 mb2">Mono</h1>
-          <div class="flex ba-ns b--moon-gray br3 overflow-hidden-ns">
-            <div id="mono" class="code overflow-none lh-copy flex-auto pa3-ns">
+          <div class="flex ba b--moon-gray br3 overflow-hidden">
+            <div id="mono" class="code overflow-none lh-copy flex-auto pa3-ns pa2">
               font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
             </div>
             <button data-copy="mono" aria-label="Copy monospace font stack to clipboard." 
@@ -240,6 +240,8 @@
   </div>
 <script>
 (() => {
+  const successClasses = ['green', 'hover-green', 'bg-washed-green', 'hover-bg-washed-green'];
+
   async function copyText(textToCopy) {
     try {
       await navigator.clipboard.writeText(textToCopy);
@@ -255,13 +257,13 @@
       if (codeDiv && codeDiv.textContent) {
         copyText(codeDiv.textContent.trim())
           .then(() => {
-            button.classList.add('green','bg-washed-green','hover-bg-washed-green');
+            button.classList.add(...successClasses);
             const buttonIcon = button.querySelector('use');
             buttonIcon?.setAttribute('href', '#success-icon');
             const buttonText = button.querySelector('span');
             if (buttonText) buttonText.textContent = 'Copied!';
             setTimeout(() => {
-              button.classList.remove('green','bg-washed-green','hover-bg-washed-green');
+              button.classList.remove(...successClasses);
               buttonIcon?.setAttribute('href', '#copy-icon');
               if (buttonText) buttonText.textContent = 'Copy';
             }, 2000);
